@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/create-ticket', [TicketController::class, 'create'])->name('create-ticket');
+Route::get('/ticket/{ticketCode}', [TicketController::class, 'verify'])->name('verify');

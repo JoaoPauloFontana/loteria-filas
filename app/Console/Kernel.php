@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use App\Models\Result;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Log;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,6 +18,22 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $numbers = [];
+
+            for ($i=0; $i < 6; $i++) {
+                $number = rand(1, 60);
+
+                if (!in_array($number, $numbers)) {
+                    $numbers[] = $number;
+                }
+            }
+
+            $numbers = json_encode($numbers);
+
+            Result::create(['numbers' => $numbers]);
+        })->cron('*/30 * * * *');
+
     }
 
     /**
