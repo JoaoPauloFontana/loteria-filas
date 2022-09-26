@@ -41,7 +41,5 @@ class ResultCommand extends Command
         $numbers = json_encode($numbers);
 
         Result::create(['numbers' => $numbers]);
-
-        sleep(30);
     }
 }

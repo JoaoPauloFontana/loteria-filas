@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\ResultCommand;
+use App\Jobs\CreateResultJob;
 use App\Models\Result;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -22,8 +23,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
-        $schedule->command('create:result')->everyMinute();
+        // $schedule->command('create:result')->everyMinute();
+        $schedule->job(CreateResultJob::class)->everyMinute();
+        $schedule->command('queue:work')->everyMinute();
     }
 
     /**
