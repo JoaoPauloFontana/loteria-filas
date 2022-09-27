@@ -45,6 +45,16 @@ class TicketController extends Controller
 
         $result = Result::orderBy('id', 'desc')->first();
 
+        if (!$result) {
+            return response()->json([
+                'name' => $participant->name,
+                'yourNumbers' => $participant->numbers,
+                'machineNumbers' => null,
+                'winner' => false,
+                'message' => 'not yet!',
+            ]);
+        }
+
         $arrayResult = json_decode($result->numbers);
         $arrayParticipant = json_decode($participant->numbers);
 

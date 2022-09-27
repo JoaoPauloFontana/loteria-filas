@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ArrayVerify;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -27,7 +28,8 @@ class CreateTicketRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'numbers.*' => 'required|integer|max:60|min:1'
+            'numbers.*' => 'required|integer|max:60|min:1',
+            'numbers' => new ArrayVerify,
         ];
     }
 
