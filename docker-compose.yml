@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    command: --init-file /data/application/init.sql
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: test
+      MYSQL_USER: root
+      MYSQL_PASSWORD:
+    volumes:
+      - ./db:/var/lib/mysql
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    image: 'laravelapp'
+    ports:
+      - 8080:80
+      - 8000:8000
+      - 3000:3000
+      - 3001:3001
+    volumes:
+      - ./:/var/www/html
+networks:
+  default:
+    external: false
+    name: database_default
