@@ -1,24 +1,22 @@
-## Instalation
-
-In order to run this boilerplate, make sure to have installed at least:
+## Instalação
 
 - php >= v8.0
 - composer >= v1.8.5
 
-Then run the following commands in your command line to install dependencies:
+Em seguida, execute os seguintes comandos em sua linha de comando para instalar as dependências:
 
 - composer install
 
-* first time run aditional steps
+* Para a primeira vez, execute estas etapas:
 
-  - rename .env.example to .env
-  - run php artisan key:generate
-  - run php artisan migrate
-   
-To init the project and compile assets use:
+  - renomeie .env.example to .env
+  - rode php artisan key:generate
+  - rode php artisan migrate
+
+Para iniciar o projeto e compilar, rode:
 
 - php artisan serve
 
-## License
+## Licença
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
