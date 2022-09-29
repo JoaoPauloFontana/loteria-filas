@@ -3,7 +3,7 @@
 - php >= v8.0
 - composer >= v1.8.5
 
-Em seguida, execute os seguintes comandos em sua linha de comando para instalar as dependências:
+Execute os seguintes comandos em sua linha de comando para instalar as dependências:
 
 - composer install
 
