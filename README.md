@@ -20,3 +20,7 @@ Para iniciar o projeto e compilar, rode:
 ## Licença
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Documentação Postman para as API's
+
+- https://documenter.getpostman.com/view/20134058/2s83mdLkBj
