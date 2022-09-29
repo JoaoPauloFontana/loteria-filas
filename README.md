@@ -17,6 +17,10 @@ Para iniciar o projeto e compilar, rode:
 
 - php artisan serve
 
+Para iniciar o schedule, rode:
+
+- php artisan schedule:work
+
 ## Licença
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
